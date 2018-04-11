@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+  
+  <context:property-placeholder location="classpath:service.properties"/>
+  <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="protocol" value="${email.protocol}"></property>
+    <property name="host" value="${email.host}"></property>
+    <property name="port" value="${email.port}"></property>
+    <property name="username" value="${email.username}"></property>
+    <property name="password" value="${email.password}"></property>
+    <property name="javaMailProperties">
+      <props>
+        <prop key="mail.${email.protocol}.auth">${email.auth}</prop>
+      </props>
+    </property>
+  </bean>
+  <bean id="accountEmailService" class="com.xy.mvnbook.account.email.impl.AccountEmailServiceImpl">
+    <property name="sender" ref="javaMailSender"></property>
+    <property name="systemEmail" value="${email.systemEmail}"></property>
+  </bean>
+
+</beans>

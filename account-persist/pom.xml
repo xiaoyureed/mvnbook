@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>account-persist</artifactId>
+  <name>Account Persist</name>
+  <packaging>jar</packaging>
+  <parent>
+    <groupId>com.xy.mvnbook.account</groupId>
+    <artifactId>account-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../account-parent/pom.xml</relativePath><!-- 父pom文件相对路径， 默认是 [../pom.xml]  -->
+  </parent>
+  
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+    </dependency>
+    <!-- *************************************************spring依赖 start， 主要用来支持依赖注入****************************************** -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+    </dependency>
+    <!-- *************************************************spring依赖 end， 主要用来支持依赖注入****************************************** -->
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+    </dependency>
+    
+  </dependencies>
+  
+  <build>
+    <!-- 开启测试资源目录过滤 -->
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory><!-- 这里是否加${project.basedir}均可 -->
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+    <!-- 开启主资源目录过滤 -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId><!-- 支持java8 -->
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resource-plugin</artifactId><!-- 使用utf-8处理资源处理 -->
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  
+  
+</project>

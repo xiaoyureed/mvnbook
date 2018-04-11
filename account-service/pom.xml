@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.xy.mvnbook.account</groupId>
+    <artifactId>account-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../account-parent/pom.xml</relativePath><!-- 父pom文件相对路径， 默认是 [../pom.xml]  -->
+    
+  </parent>
+  <artifactId>account-service</artifactId>
+  <name>Account Service</name>
+  <packaging>jar</packaging>
+  
+  <dependencies>
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>account-email</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>account-persist</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>account-captcha</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+          <groupId>com.icegreen</groupId>
+          <artifactId>greenmail</artifactId>
+      </dependency>
+    <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+      </dependency>
+  </dependencies>
+</project>
