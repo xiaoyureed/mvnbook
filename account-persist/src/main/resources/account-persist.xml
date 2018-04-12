@@ -10,10 +10,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
   
-  <!-- <context:property-placeholder location="classpath:service.properties"/> -->
-  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  <context:property-placeholder location="classpath:persist.properties" ignore-unresolvable="true"/>
+  <!-- <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location" value="classpath:persist.properties"></property>
-  </bean>
+  </bean> -->
   <bean id="accountPersistService" class="com.xy.mvnbook.account.persist.impl.AccountPersistServiceImpl">
     <property name="fileUrl" value="${persist.fileUrl}"></property>
   </bean>

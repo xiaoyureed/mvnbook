@@ -10,7 +10,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
   
-  <context:property-placeholder location="classpath:service.properties"/>
+  <context:property-placeholder location="classpath:service.properties" ignore-unresolvable="true"/><!-- ignore-unresulvable默认为false, 这里改为true, 解决引入多个properties文件的报错问题
+ -->
   <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
     <property name="protocol" value="${email.protocol}"></property>
     <property name="host" value="${email.host}"></property>

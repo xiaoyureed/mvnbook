@@ -4,14 +4,36 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+        classpath:/account-persist.xml
+        classpath:/account-captcha.xml
+        classpath:/account-email.xml
+        classpath:/account-service.xml
+    </param-value>
+  </context-param>
+  <listener><listener-class>org.springframework.web.context.ContextLoaderListener</listener-class></listener>
+  
   <servlet>
   	<servlet-name>CaptchaImageServlet</servlet-name>
   	<display-name>CaptchaImageServlet</display-name>
   	<description>return captcha image to jsp</description>
   	<servlet-class>com.xy.mvnbook.account.web.CaptchaImageServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<display-name>SignUpServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.xy.mvnbook.account.web.SignUpServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CaptchaImageServlet</servlet-name>
   	<url-pattern>/captcha_image</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<url-pattern>/sign_up</url-pattern>
   </servlet-mapping>
 </web-app>

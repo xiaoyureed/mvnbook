@@ -40,5 +40,23 @@
   </dependencies>
   <build>
     <finalName>account</finalName><!-- 最终生成的jar名字; 默认为${project.artifactId}-${project.version} -->
+    <plugins>
+        <plugin>
+	        <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-maven-plugin</artifactId>
+		    <version>9.4.5.v20170502</version>
+	       <configuration>
+	            <scanIntervalSeconds>5</scanIntervalSeconds>
+	            <webAppConfig>  
+	               <contextPath>/${project.artifactId}</contextPath>  
+	           </webAppConfig>
+	           <connectors>
+	               <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+	                   <port>8081</port>
+	               </connector>
+	           </connectors>
+	       </configuration>
+	    </plugin>
+    </plugins>
   </build>
 </project>

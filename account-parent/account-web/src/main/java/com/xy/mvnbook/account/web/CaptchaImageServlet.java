@@ -1,14 +1,12 @@
 package com.xy.mvnbook.account.web;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.util.StringUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -17,6 +15,7 @@ import com.xy.mvnbook.account.service.exception.AccountServiceException;
 
 /**
  * 返回captcha image
+ * [/captcha_image]
  *
  * @author xiaoyu
  * @version 0.0.1

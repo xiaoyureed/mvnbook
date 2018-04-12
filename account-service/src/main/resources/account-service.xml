@@ -19,8 +19,8 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
   <import resource="classpath*:/account-persist.xml"/>
   <bean id="accountService" class="com.xy.mvnbook.account.service.impl.AccountServiceImpl">
     <property name="accountCaptchaService" ref="accountCaptchaService"></property>
-    <property name="accountEmailService" value="accountEmailService"></property>
-    <property name="accountPersistService" value="accountPersistService"></property>
+    <property name="accountEmailService" ref="accountEmailService"></property>
+    <property name="accountPersistService" ref="accountPersistService"></property>
   </bean>
 
 </beans>
