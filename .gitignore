@@ -26,3 +26,8 @@ hs_err_pid*
 /*/target/
 /*/.classpath
 /*/.project
+account-parent/account-web/.classpath
+account-parent/account-web/.project
+account-parent/account-web/target/
+account-parent/account-web/.settings/
+
