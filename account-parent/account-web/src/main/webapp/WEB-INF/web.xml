@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>CaptchaImageServlet</servlet-name>
+  	<display-name>CaptchaImageServlet</display-name>
+  	<description>return captcha image to jsp</description>
+  	<servlet-class>com.xy.mvnbook.account.web.CaptchaImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CaptchaImageServlet</servlet-name>
+  	<url-pattern>/captcha_image</url-pattern>
+  </servlet-mapping>
 </web-app>

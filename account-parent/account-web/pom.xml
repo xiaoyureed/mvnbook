@@ -7,11 +7,13 @@
     <artifactId>account-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
   <artifactId>account-web</artifactId>
   <packaging>war</packaging>
   <name>account-web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  
   <dependencies>
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -25,8 +27,18 @@
         <groupId>javax.servlet.jsp</groupId>
         <artifactId>jsp-api</artifactId>
     </dependency> -->
+    
+    <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>account-service</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+    </dependency>
   </dependencies>
   <build>
-    <finalName>account-web</finalName>
+    <finalName>account</finalName><!-- 最终生成的jar名字; 默认为${project.artifactId}-${project.version} -->
   </build>
 </project>
